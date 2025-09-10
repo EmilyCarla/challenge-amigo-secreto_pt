@@ -2,7 +2,7 @@
 
 let nomesAmigos = [];
 
-function adicionarNome(){
+function adicionarAmigo(){
     let nomeAmigo = document.getElementById("amigo").value;
 
     if(nomeAmigo === ""){
@@ -27,3 +27,17 @@ function atualizarLista(){
         lista.innerHTML += `<li>${nomesAmigos[i]}</li>`;
     }
 }
+
+function sortearAmigo(){
+    if(nomesAmigos.length < 2){
+        alert("Adicione pelo menos dois nomes antes de sortear.");
+        return;
+    }else{
+        let indiceSorteado  = Math.random() * nomesAmigos.length;
+        indiceSorteado = Math.floor(indiceSorteado);
+        let amigoSorteado = nomesAmigos[indiceSorteado];
+        let resultado = document.getElementById("resultado");
+        resultado.innerHTML = `O amigo sorteado é: <strong>${amigoSorteado}</strong>`;
+    }
+}
+
